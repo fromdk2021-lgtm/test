@@ -2,30 +2,48 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: #faf5f5;
 }
 
 
 #head {
-    background-color: #383e45;
+    background-color: #b40912;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#head-text {
+    color: #faf5f5;
+    font-size: 70px;
+    background-color: #b40912;
 }
 
 #menu-list{
     list-style-type: none;
     display: block;
     float: left;
-    padding: 0;
+
+    padding: 40px;
     margin: 0;
+
     width: 25%;
     height: 100vh;
 }
-
 #menu-list li { 
     display: block;
     width: max-content;
     cursor: pointer;
-    border: 1px solid silver;
-    margin-bottom: 20px;
+
+    font-family: "Rubik Spray Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #d3cdcd;
+    font-size: 25px;
+    -webkit-text-stroke: 1px rgb(65, 65, 65); 
+}
+li:not(:last-child) {
+    margin-bottom: 50px;
 }
 
 #all-1{
@@ -71,4 +89,131 @@
 
 .all-menu{
     border: 1px solid silver;
+    border-top: none;
+    background-color: #faf5f5;
+
+    font-family: "Rubik Spray Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #d3cdcd;
+    font-size: 25px;
+    -webkit-text-stroke: 1px rgb(65, 65, 65); 
+}
+
+/*ИИ код красивой строки ввода*/
+.beautiful-input {
+  /* 1. Делаем поле больше */
+  width: 100%;             /* Растягиваем на всю ширину родителя */
+  max-width: 400px;        /* Ограничиваем максимальную ширину */
+  padding: 14px 20px;      /* Внутренние отступы (высота и ширина поля) */
+  font-size: 16px;         /* Крупный, легко читаемый шрифт */
+
+  height: 20px;
+  
+  /* 2. Сглаживание и база */
+  border: 2px solid #e0e0e0;  /* Мягкая серая рамка вместо стандартной черной */
+  border-radius: 12px;     /* Скругление углов (в стиле iOS/Modern web) */
+  background-color: #f9f9f9;  /* Слегка сероватый приятный фон */
+  color: #333333;          /* Цвет вводимого текста */
+  outline: none;           /* Отключаем стандартную синюю обводку браузера */
+  
+  /* 3. Плавность анимаций */
+  transition: all 0.3s ease; /* Плавная смена цвета при наведении и фокусе */
+}
+
+/* Изменяем цвет текста-подсказки (placeholder) */
+.beautiful-input::placeholder {
+  color: #aaa;
+  font-weight: 400;
+}
+
+/* Эффект при наведении мыши */
+.beautiful-input:hover {
+  border-color: #b0b0b0;   /* Рамка становится чуть темнее */
+  background-color: #fff;  /* Фон становится чисто белым */
+}
+
+/* Эффект ФОКУСА (когда пользователь кликнул внутрь поля) */
+.beautiful-input:focus {
+  border-color: #007bff;   /* Окрашиваем рамку в контрастный цвет (например, синий) */
+  background-color: #fff;  /* Чисто белый фон */
+  /* Мягкое свечение вокруг поля за счет тени */
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15); 
+}
+
+/* Стили для строки ввода (корректировка ширины) */
+.beautiful-input {
+  flex-grow: 1;       /* Инпут забирает всё свободное место */
+  padding: 14px 20px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.beautiful-input:hover {
+  border-color: #b0b0b0;
+  background-color: #fff;
+}
+.beautiful-input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+}
+
+.task-button {
+  /* Форма овальной капсулы, как у инпута */
+  padding: 8px 24px;
+  border-radius: 20px;
+  
+  /* Эффект матового белого/светлого фона (в тон подложки) */
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  
+  /* ФИРМЕННЫЙ СТИЛЬ ТЕКСТА С ОБВОДКОЙ */
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  font-size: 14px;
+  color: #ffffff; /* Белые буквы */
+  
+  /* Серая обводка букв, как у текста на скриншоте */
+  text-shadow: 
+     1px  1px 0px #9c9995,
+    -1px -1px 0px #9c9995,
+     1px -1px 0px #9c9995,
+    -1px  1px 0px #9c9995;
+    
+  /* Плавный переход для эффектов */
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ЭФФЕКТЫ ДЛЯ ИНТЕРАКТИВНОСТИ: */
+
+/* При наведении кнопка становится чуть плотнее по цвету */
+.task-button:hover {
+  background: rgba(255, 255, 255, 1);
+  border-color: #b5b5b5;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* При клике (зажатии) кнопка слегка прожимается вниз */
+.task-button:active {
+  transform: scale(0.96);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Убираем дефолтную синюю рамку фокуса */
+.task-button:focus {
+  outline: none;
+}
+
+/*ИИ код закончился */
+
+#all-1, #all-2, #all-3, #all-4{
+    margin: -35px;
+    margin-top: 35px;
+    border-left: none;
 }
