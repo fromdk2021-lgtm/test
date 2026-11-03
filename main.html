@@ -5,33 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo-список</title>
     <link rel="stylesheet" href="css/main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="head" class="all-menu">Список задач</div>
+    <div id="head" class="all-menu"><span id="head-text">Список задач</span></div>
+
     <ul id="menu-list" class="all-menu">
         <li onclick="showAdd()">Добавить задачу</li>
         <li onclick="showAll()">Все задачи</li>
         <li onclick="showAct()">Активные задачи</li>
         <li onclick="showReady()">Выполненные задачи</li>
     </ul>
+
     <div id="all-1" class="all-menu">
-        <div>Все задачи</div>
+        <div>Все задачи</div><br>
         <div id="addZ"></div>
     </div>
+    
     <div id="all-2" class="all-menu">
-        <div>Активные задачи</div>
+        <div>Активные задачи</div><br>
         <div id="activeZad"></div>
     </div>
     <div id="all-3" class="all-menu">
-        <div>Выполненные задачи</div>
+        <div>Выполненные задачи</div><br>
         <div id="finish"></div>
     </div>
     </div>
     <div id="all-4" class="all-menu">
-        <div>Добавить задачу</div>
+        <div>Добавить задачу</div><br>
         <label for="zadacha">Вписать задачу</label>
-        <input type="text" id="zadacha" name="zadacha" placeholder="Задача">
-        <button id="new" onclick="newZad()">Добавить</button>
+        <input type="text" class="beautiful-input" id="zadacha" name="zadacha" placeholder="Задача">
+        <button id="new" class="task-button" onclick="newZad()">Добавить</button>
         <div></div>
     </div>
 
